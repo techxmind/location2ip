@@ -1,3 +1,12 @@
+# 命令行
+```
+go get github.com/techxmind/location2ip/cmd/loc2ip
+
+loc2ip -h
+loc2ip -n 5 北京
+```
+
+# 示例
 ```
 import (
 	"fmt"
@@ -18,3 +27,4 @@ for loc := range locs {
     }
 }
 ```
+
