@@ -4,6 +4,7 @@ import (
 	"errors"
 	"fmt"
 	"math/rand"
+	"time"
 )
 
 var ErrInvalidGeo = errors.New("Invalid geo")
@@ -13,6 +14,8 @@ func Generate(geo string) (ip string, err error) {
 		ipRanges []uint32
 		ok       bool
 	)
+
+	rand.Seed(time.Now().UnixNano())
 
 	if ipRanges, ok = _geoIpData[geo]; !ok {
 		if geoIDs, ok := _locationGeoIDMapper[geo]; ok {
